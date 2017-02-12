@@ -116,3 +116,5 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+memsource.api.base = "https://cloud.memsource.com/web/api/v3"

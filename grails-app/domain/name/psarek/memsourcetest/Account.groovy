@@ -10,4 +10,8 @@ class Account {
         password(blank:false)
     }
 
+    boolean valueEquals(Account other) {
+        return this.userName == other.userName && this.password == other.password
+    }
+
 }
