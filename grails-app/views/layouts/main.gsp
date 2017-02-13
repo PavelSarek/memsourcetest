@@ -15,9 +15,16 @@
   		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
 		<g:layoutHead/>
+        <r:layoutResources />
 	</head>
 	<body>
+        <div class="header nav buttons">
+            <g:link controller="setup" action="edit"><g:message code="setup.header" /></g:link>
+            <g:link controller="projects" action="list"><g:message code="projects.header" /></g:link>
+        </div>
+
 		<g:layoutBody/>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+        <r:layoutResources />
 	</body>
 </html>

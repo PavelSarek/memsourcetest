@@ -20,16 +20,12 @@ class AccountServiceSpec extends Specification {
             service.currentAccount
             service.updateCurrentAccount(accountA)
         then:
-            compareAccount(service.currentAccount, accountA)
+            service.currentAccount.valueEquals(accountA)
 
         when:
             service.updateCurrentAccount(accountB)
         then:
-            compareAccount(service.currentAccount, accountB)
-    }
-
-    boolean compareAccount(Account lhs, Account rhs) {
-        return lhs.userName == rhs.userName && lhs.password == rhs.password
+            service.currentAccount.valueEquals(accountB)
     }
 
 }
