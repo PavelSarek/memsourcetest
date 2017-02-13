@@ -13,7 +13,7 @@ import org.springframework.util.MultiValueMap
 import java.text.SimpleDateFormat
 
 /**
- * Obtrains and caches the memsource's API user token.
+ * Obtains and caches the memsource's API user token.
  */
 @Log4j
 class LoginService {
@@ -69,7 +69,7 @@ class LoginService {
             contentType("application/x-www-form-urlencoded")
             body(accountToForm(currentAccount))
         }
-        response
+        return response
     }
 
     private MultiValueMap<String, String> accountToForm(Account account) {
@@ -94,7 +94,7 @@ class LoginService {
 
     private void throwLoginException(RestResponse response) {
         def message = messageSource.getMessage(
-                "project.login.failed",
+                "projects.login.failed",
                 [response.getStatusCode(), response.getText()] as Object[],
                 LocaleContextHolder.getLocale()
         )

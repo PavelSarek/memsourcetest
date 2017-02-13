@@ -47,8 +47,9 @@ body {
 	        box-shadow: 0 0 0.3em #255b17;
 }
 
-#grailsLogo {
-	background-color: #abbf78;
+.header {
+	clear: both;
+	padding: 1em
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -89,7 +90,7 @@ img {
 
 /* GENERAL */
 
-#grailsLogo a {
+.headers a {
 	display: inline-block;
 	margin: 1em;
 }
@@ -99,7 +100,7 @@ img {
 
 .content h1 {
 	border-bottom: 1px solid #CCCCCC;
-	margin: 2em 1em 0.3em;
+	margin: 0.5em 1em 0.3em;
 	padding: 1em 0.25em 0.25em;
 }
 
@@ -567,7 +568,7 @@ th:hover, tr:hover {
 	text-decoration: underline;
 }
 
-.buttons .delete, .buttons .edit, .buttons .save {
+.buttons .delete, .buttons .edit, .buttons .save, .buttons .load {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -590,6 +591,11 @@ th:hover, tr:hover {
 	background-image: url(../images/skin/database_save.png);
 }
 
+.buttons .load {
+    background-image: url(../images/skin/database_add.png);
+}
+
+
 a.skip {
 	position: absolute;
 	left: -9999px;
@@ -598,4 +604,18 @@ a.skip {
 a.skip:focus, a.skip:active {
 	position: relative;
 	left: 0px;
+}
+
+#projectList {
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#projectList ul {
+    margin-left: 2.5em
+}
+
+#projectList dl {
+    margin-top: 0.5em
 }

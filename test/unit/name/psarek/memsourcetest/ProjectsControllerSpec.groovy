@@ -9,12 +9,21 @@ import spock.lang.Specification
 @TestFor(ProjectsController)
 class ProjectsControllerSpec extends Specification {
 
-    def setup() {
+    void "test load passes correct page value"() {
+        given: "a mock project service"
+        def mockProjectsService = Mock(ProjectsService)
+        1 * mockProjectsService.loadProjects(42) >> [[name: "Project A"]]
+        controller.projectsService = mockProjectsService
+
+        and:
+        controller.params.page="42"
+
+
+        when: "controller is invoked"
+        controller.load()
+
+        then:
+        response.json[0].name == "Project A"
     }
 
-    def cleanup() {
-    }
-
-    void "test something"() {
-    }
 }
