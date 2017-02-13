@@ -11,6 +11,9 @@ class LoginServiceSpec extends Specification {
 
     // todo: not finished
 
+    // needs to mock RestBuider
+    // see http://margotskapacs.com/2013/06/mock-httpbuilder-and-post-requests-in-grails/
+
     def setup() {
     }
 
